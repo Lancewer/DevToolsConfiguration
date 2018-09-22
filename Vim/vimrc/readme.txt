@@ -1,0 +1,1 @@
+rename vimrc to .vimrc
