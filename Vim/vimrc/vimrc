@@ -209,6 +209,9 @@ sunmap e
 :nnoremap § :nohlsearch<cr>
 nnoremap <silent> <C-l>  :<C-u>nohlsearch<CR><C-l>
 
+" jsctags press f5 generate all js files except node_module folder
+:nnoremap <f5> :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; \| sed '/^$/d' \| LANG=C sort > tags<CR>
+
 " Command to use sudo when needed
 cmap w!! %!sudo tee > /dev/null %
 
